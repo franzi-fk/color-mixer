@@ -1,0 +1,50 @@
+:root {
+  --r-value: 0;
+  --g-value: 0;
+  --b-value: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+html,
+body,
+p {
+  margin: 0;
+}
+
+body {
+  background-color: rgba(var(--r-value), var(--g-value), var(--b-value), 1);
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 2rem 2rem 2.1rem 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+label,
+p {
+  font-size: 2rem;
+  color: black;
+}
+
+#slider-red {
+  accent-color: red;
+  margin-right: 1.25rem;
+}
+
+#slider-green {
+  accent-color: green;
+  margin-right: 1.25rem;
+}
+
+#slider-blue {
+  accent-color: blue;
+  margin-right: 1.25rem;
+}
