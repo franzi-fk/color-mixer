@@ -7,7 +7,6 @@ const sliderGreen = document.querySelector("#slider-green");
 const sliderBlue = document.querySelector("#slider-blue");
 const btnRandom = document.querySelector("#btn-random");
 const root = document.documentElement;
-let randomColor = null;
 
 /*----------------------------------------------------------*/
 /* INIT */
@@ -32,8 +31,8 @@ function updateColorValues() {
   updateHex();
 }
 
-function applyRandomColor() {
-  fetchRandomColor();
+async function applyRandomColor() {
+  let randomColor = await fetchRandomColor(); // wait for fetchRandomColor to finish
 
   // Error Handling
   if (randomColor === null) {
@@ -57,10 +56,8 @@ async function fetchRandomColor() {
 
     // `await` is used again to parse the response body as JSON.
     // This also pauses execution until the parsing is complete.
-    randomColor = await response.json();
-
     // If everything succeeds, return the fetched color data.
-    return randomColor;
+    return await response.json();
 
     // The `catch` block executes if an error occurs in the `try` block.
     // This could be due to network failure, API unavailability, or invalid JSON response.
